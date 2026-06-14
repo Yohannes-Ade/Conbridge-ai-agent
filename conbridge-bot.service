@@ -1,0 +1,18 @@
+[Unit]
+Description=ConBridge Daily Construction Price Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/conbridge_bot
+EnvironmentFile=/home/ubuntu/conbridge_bot/.env
+ExecStart=/home/ubuntu/conbridge_bot/venv/bin/python bot.py --schedule
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
