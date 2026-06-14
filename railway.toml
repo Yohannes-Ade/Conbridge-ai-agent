@@ -2,5 +2,5 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "python bot.py --schedule"
+startCommand = "python bot.py"
 restartPolicyType = "always"
